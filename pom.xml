@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>Vulcanus</name>
-	<description></description>
+	<description>Converter Image to Base64</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
