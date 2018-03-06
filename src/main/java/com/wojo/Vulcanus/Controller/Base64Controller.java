@@ -2,12 +2,9 @@ package com.wojo.Vulcanus.Controller;
 
 import com.wojo.Vulcanus.Service.ImgToBase64Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/getBase64")
+@RequestMapping("/api/base64")
 @RestController
 public class Base64Controller {
 
@@ -18,8 +15,13 @@ public class Base64Controller {
         this.imgToBase64Service = imgToBase64Service;
     }
 
-    @GetMapping
+    @GetMapping("/get/")
     public String getBase64(@RequestParam String url) {
+        return imgToBase64Service.getBase64FromImage(url);
+    }
+
+    @PostMapping("/create")
+    public String createBase64(@RequestBody String url) {
         return imgToBase64Service.getBase64FromImage(url);
     }
 }
