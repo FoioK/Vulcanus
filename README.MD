@@ -14,12 +14,6 @@ All API requests should be prefixed with api/base64. API requests do not require
 
 Return base64 string.
 
-#### `POST /create`
-    parameters: url={#} (required)
-    
-
-Return base64 string.
-
 ## License
 
 Vault is licensed under the [MIT License](http://opensource.org/licenses/MIT).
