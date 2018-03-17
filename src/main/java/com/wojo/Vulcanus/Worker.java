@@ -36,6 +36,7 @@ public class Worker implements Runnable {
 
         urlList.forEach(url -> base64.add(encodeImage(getByteArrayFromImageURL(url))));
 
+        request.setAnswer(base64);
         request.setCompleted(true);
     }
 
