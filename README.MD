@@ -14,6 +14,11 @@ All API requests should be prefixed with api/base64. API requests do not require
 
 Return base64 string.
 
+#### `POST /convert` consume only json type
+    body: url link list (required)
+
+Return base64 string list.
+
 ## License
 
 Vault is licensed under the [MIT License](http://opensource.org/licenses/MIT).
