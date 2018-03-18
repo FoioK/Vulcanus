@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/api/base64")
+@RequestMapping(value = "/api/base64", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
 public class MainController {
 
@@ -24,6 +24,7 @@ public class MainController {
 
     @PostMapping(value = "/convert", consumes = MediaType.APPLICATION_JSON_VALUE)
     public List<String> convertAllToBase64(@RequestBody List<String> urls) {
-        return base64Service.getBase64(urls);
+        return urls.size() > Request.REQUEST_SIZE ?
+                base64Service.getBase64(urls) : base64Service.getBase64SingleRequest(urls);
     }
 }
