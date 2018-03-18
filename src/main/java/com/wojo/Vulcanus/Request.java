@@ -2,12 +2,14 @@ package com.wojo.Vulcanus;
 
 public class Request<K, V> {
 
+    public static final Integer REQUEST_SIZE = 10;
+
     private K key;
     private V value;
     private boolean isCompleted;
     private V answer;
 
-    public Request(K key, V value) {
+    Request(K key, V value) {
         this.key = key;
         this.value = value;
     }
